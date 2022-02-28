@@ -16,11 +16,11 @@ const Home = ({ posts }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="flex items-center justify-between border-y border-black bg-[#55a630] py-10 lg:py-0">
+      <div className="flex items-center justify-between border-y border-black bg-[#457b9d] py-10 lg:py-0">
         <div className="space-y-5 px-10">
-          <h1 className="max-w-xl font-serif text-6xl">
-            <span className="underline decoration-black">Spacemans Blog</span>{' '}
-            is a place to connect
+          <h1 className="font-serif max-w-xl text-6xl">
+            <span className="text-yellow-400">Spacemans Blog</span> is a place
+            to connect
           </h1>
           <h2 className="font-mono text-xl">
             It's always a good read with a hot coffee and a good{' '}

@@ -9,7 +9,6 @@ interface Props {
 }
 
 function Post({ post }: Props) {
-  console.log(post)
   return (
     <main>
       <Header />
@@ -18,39 +17,30 @@ function Post({ post }: Props) {
         alt=""
         className="mx-auto w-6/12 object-cover"
       />
-      <article className="mx-auto max-w-3xl p-5">
-        <h1 className="mt-10 mb-3 text-3xl">{post.title}</h1>
-        <h2 className="mb-2 text-xl font-light text-gray-600">
+      <article className="mx-auto max-w-4xl p-5">
+        <h1 className="mt-10 mb-3 font-fredoka text-3xl">{post.title}</h1>
+        <h2 className="mb-2 font-fredoka text-xl font-light text-gray-600">
           {post.description}
         </h2>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 font-fredoka">
           <img
             src={urlFor(post.author.image).url()!}
             alt=""
             className="h-12 w-12 rounded-full"
           />
-          <p className="text-sm font-extralight">
+          <p className="text-lg font-extralight">
             Blog Post by {post.author.name} - Published at{' '}
             {new Date(post._createdAt).toLocaleString()}
           </p>
         </div>
-        <div>
+        <div className="mt-10 font-opensans">
           <PortableText
             dataset="production"
             projectId="2n19i9a0"
             content={post.body}
             serializers={{
               h1: (props: any) => (
-                <h1 className="my-5 text-2xl font-bold" {...props} />
-              ),
-              h2: (props: any) => (
-                <h2 className="my-5 text-xl font-bold" {...props} />
-              ),
-              li: (props: any) => <li className="ml-5 list-disc" {...props} />,
-              link: ({ href, children }: any) => (
-                <a href={href} className="text-blue-500 hover:underline">
-                  {children}
-                </a>
+                <h1 className=" my-5 text-2xl font-bold" {...props} />
               ),
             }}
           />
@@ -108,6 +98,6 @@ mainImage, slug, body
     props: {
       post,
     },
-    revalidate: 60 * 30, // reupdate everything regarding each post every 30mins
+    revalidate: 60, // reupdate everything regarding each post every 60 seconds
   }
 }

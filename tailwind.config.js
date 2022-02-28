@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      fredoka: ["Fredoka", "cursive"],
+      opensans: ["Open Sans", "sans-serif"]
+    }
   },
   plugins: [],
 }

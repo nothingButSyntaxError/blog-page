@@ -6,9 +6,10 @@ function Header() {
       <div className="flex items-center space-x-5">
         <Link href="/">
           <img
-            src="https://links.papareact.com/yvf"
-            className="w-44 cursor-pointer object-contain"
-            alt=""
+            // src="https://links.papareact.com/yvf"
+            src="/SB.png"
+            className="w-20 cursor-pointer object-contain"
+            alt="logo"
           />
         </Link>
         <div className="hidden items-center space-x-5 md:inline-flex">

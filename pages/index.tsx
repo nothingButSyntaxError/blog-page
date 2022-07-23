@@ -20,7 +20,7 @@ const Home = ({ posts }: Props) => {
         <div className="space-y-5 px-10">
           <h1 className="font-serif max-w-xl text-6xl">
             <span className="text-yellow-400">Spacemans Blog</span> is a place
-            to connect
+            to connect.
           </h1>
           <h2 className="font-mono text-xl">
             It's always a good read with a hot coffee and a good{' '}
@@ -30,9 +30,10 @@ const Home = ({ posts }: Props) => {
           </h2>
         </div>
         <img
-          src="https://accountabilitylab.org/wp-content/uploads/2020/03/Medium-logo.png"
+          // src="https://accountabilitylab.org/wp-content/uploads/2020/03/Medium-logo.png"
+          src="/SBM.png"
           alt="Logo"
-          className="hidden h-32 md:inline-flex lg:h-full"
+          className="mr-10 hidden h-32 md:inline-flex lg:h-full"
         />
       </div>
       <div className="grid grid-cols-1 gap-3 p-2 sm:grid-cols-2 md:gap-6 md:p-6 lg:grid-cols-3">

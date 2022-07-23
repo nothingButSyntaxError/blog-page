@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "spacemans-blog"
-  },
   "api": {
     "projectId": "2n19i9a0",
     "dataset": "production"
+  },
+  "project": {
+    "name": "spacemans-blog"
   },
   "plugins": [
     "@sanity/base",

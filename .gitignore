@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+package-lock.json
 
 # testing
 /coverage
@@ -37,3 +38,5 @@ yarn-error.log*
 *.tsbuildinfo
 
 spacemansblog/node_modules
+spacemansblog/yarn.lock
+spacemansblog/package-lock.json

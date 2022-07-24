@@ -46,6 +46,37 @@ function Post({ post }: Props) {
           />
         </div>
       </article>
+      <hr className="my-5 mx-auto max-w-lg border border-yellow-500" />
+      <form className="mx-auto mb-10 flex max-w-2xl flex-col p-10">
+        <h3 className="text-3xl font-bold text-yellow-500">
+          Enjoyed the article?
+        </h3>
+        <h3 className="text-3xl font-bold">Make sure to leave a comment!</h3>
+        <label htmlFor="" className="bold mb-5">
+          <span className="text-gray-700">Name</span>
+          <input
+            className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-500 focus:ring"
+            placeholder="John Doe"
+            type="text"
+          />
+        </label>
+        <label htmlFor="" className="bold mb-5">
+          <span className="text-gray-700">Email</span>
+          <input
+            className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-500 focus:ring"
+            placeholder="johndoe@email.com"
+            type="text"
+          />
+        </label>
+        <label htmlFor="" className="bold mb-5">
+          <span className="text-gray-700">Comment</span>
+          <textarea
+            placeholder="It was a great read! Thanks."
+            rows={8}
+            className="form-textarea mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-500 focus:ring"
+          />
+        </label>
+      </form>
     </main>
   )
 }

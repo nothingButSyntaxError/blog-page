@@ -40,3 +40,4 @@ yarn-error.log*
 spacemansblog/node_modules
 spacemansblog/yarn.lock
 spacemansblog/package-lock.json
+spacemansblog/dist

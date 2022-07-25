@@ -9,7 +9,7 @@ function Blog(post: Post) {
         <img
           className="h-60 w-full object-cover"
           src={urlFor(post.mainImage).url()!}
-          alt=""
+          alt="blog main image"
         />
         <div className="text-md font-mono flex justify-between bg-white p-5">
           <div>
@@ -21,7 +21,7 @@ function Blog(post: Post) {
           <img
             className="h-14 w-14 rounded-full"
             src={urlFor(post.author.image).url()!}
-            alt=""
+            alt="blog author image"
           />
         </div>
       </div>

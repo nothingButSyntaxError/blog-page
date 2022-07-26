@@ -12,7 +12,7 @@ function Blog(post: Post) {
           alt="blog main image"
         />
         <div className="text-md font-mono flex justify-between bg-white p-5">
-          <div>
+          <div suppressHydrationWarning>
             <p className="font-semibold text-gray-900">{post.title}</p>
             <p className="text-gray-700">
               {post.description} by {post.author.name}

@@ -20,6 +20,8 @@ interface Props {
 function Post({ post }: Props) {
   const [submitted, setSubmitted] = useState(false)
 
+  console.log(post)
+
   const {
     register,
     handleSubmit,
@@ -149,13 +151,19 @@ function Post({ post }: Props) {
           />
         </form>
       )}
-      <div>
-        <h3>Comments</h3>
-        <hr />
+      <div
+        className="my-10 mx-auto flex max-w-2xl flex-col space-y-2
+        rounded-sm p-10 shadow shadow-green-400
+          "
+      >
+        <h3 className="text-4xl text-gray-800">Comments</h3>
+        <hr className="pb-2" />
+
         {post.comments.map((comment) => (
-          <div>
-            <p>
-              {comment.name}:{comment.comment}
+          <div key={comment._id} className="">
+            <p className="text-gray-800">
+              <span className="text-yellow-500">{comment.name}: </span>
+              {comment.comment}
             </p>
           </div>
         ))}
@@ -187,25 +195,25 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const query = `*[_type == "post" && slug.current == $slug][0] {
+  const query = `*[_type == 'post'&& slug.current == $slug][0]{
   _id,
-  _createdAt,
+ _createdAt,
   title,
   author -> {
   name,
   image
 },
 'comments': *[
-  _type=="comment",
-  post._ref ==  ^._id &&
-  approved == true
-],
-description,
-mainImage, slug, body
-}`
-  const post = await sanityClient.fetch(query, {
-    slug: params?.slug,
-  })
+    _type == 'comment' && 
+    post._ref == ^._id &&
+    approved == true],
+    description,
+    mainImage,
+    slug,
+    body
+    }`
+
+  const post = await sanityClient.fetch(query, { slug: params?.slug })
 
   if (!post) {
     return {
@@ -217,6 +225,6 @@ mainImage, slug, body
     props: {
       post,
     },
-    revalidate: 60,
+    revalidate: 60, //it will update the old cache every 10 mins
   }
 }
